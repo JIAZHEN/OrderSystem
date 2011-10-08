@@ -264,6 +264,7 @@ public class ServerThread extends Thread {
         }
         System.out.println("Someone left. Currently there are "
                 + clientList.size() + " clients");
-        System.out.println();
+        System.out.println("english version");
+	
     }
 }
