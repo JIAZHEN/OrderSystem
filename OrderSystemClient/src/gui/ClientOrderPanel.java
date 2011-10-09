@@ -8,7 +8,6 @@
  *
  * Created on 2011-10-9, 0:54:24
  */
-
 package gui;
 
 import java.text.*;
@@ -18,7 +17,9 @@ import java.util.*;
  *
  * @author Administrator
  */
-public class ClientOrderPanel extends javax.swing.JPanel implements Runnable{
+public class ClientOrderPanel extends javax.swing.JPanel implements Runnable {
+
+    private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
     /** Creates new form ClientOrderPanel */
     public ClientOrderPanel() {
@@ -46,21 +47,38 @@ public class ClientOrderPanel extends javax.swing.JPanel implements Runnable{
         jScrollPane1 = new javax.swing.JScrollPane();
         orderedTabel = new javax.swing.JTable();
         menuPanel = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        catalogPanel = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        dishDetailsPanel = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        noLabel1 = new javax.swing.JLabel();
+        commentTextField = new javax.swing.JTextField();
+        noLabel2 = new javax.swing.JLabel();
+        amoutTextField = new javax.swing.JTextField();
+        noLabel3 = new javax.swing.JLabel();
+        reasonTextField = new javax.swing.JTextField();
+        rightPanel = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setAlignmentX(0.0F);
+        setAlignmentY(0.0F);
+        setPreferredSize(new java.awt.Dimension(1166, 800));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         leftPanel.setBackground(new java.awt.Color(255, 255, 255));
         leftPanel.setName("leftPanel"); // NOI18N
 
-        timeLabel.setFont(new java.awt.Font("宋体", 1, 24));
+        timeLabel.setFont(new java.awt.Font("宋体", 1, 24)); // NOI18N
         timeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         timeLabel.setName("timeLabel"); // NOI18N
 
@@ -70,7 +88,7 @@ public class ClientOrderPanel extends javax.swing.JPanel implements Runnable{
         spendLabel.setName("spendLabel"); // NOI18N
 
         noLabel.setBackground(new java.awt.Color(255, 255, 102));
-        noLabel.setFont(new java.awt.Font("新宋体", 0, 12)); // NOI18N
+        noLabel.setFont(new java.awt.Font("新宋体", 0, 12));
         noLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         noLabel.setText("台号");
         noLabel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 102), 1, true));
@@ -87,7 +105,7 @@ public class ClientOrderPanel extends javax.swing.JPanel implements Runnable{
         });
 
         shortNameLabel.setBackground(new java.awt.Color(255, 204, 204));
-        shortNameLabel.setFont(new java.awt.Font("新宋体", 0, 12)); // NOI18N
+        shortNameLabel.setFont(new java.awt.Font("新宋体", 0, 12));
         shortNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         shortNameLabel.setText("商品简称/编码");
         shortNameLabel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 255, 102), 1, true));
@@ -102,11 +120,11 @@ public class ClientOrderPanel extends javax.swing.JPanel implements Runnable{
             }
         });
 
-        searchBtn.setFont(new java.awt.Font("新宋体", 0, 12)); // NOI18N
+        searchBtn.setFont(new java.awt.Font("新宋体", 0, 12));
         searchBtn.setText("搜索");
         searchBtn.setName("searchBtn"); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("宋体", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("宋体", 1, 14));
         jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel1.setText("已点菜单：");
@@ -146,7 +164,7 @@ public class ClientOrderPanel extends javax.swing.JPanel implements Runnable{
         leftPanel.setLayout(leftPanelLayout);
         leftPanelLayout.setHorizontalGroup(
             leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(leftPanelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, leftPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -154,16 +172,16 @@ public class ClientOrderPanel extends javax.swing.JPanel implements Runnable{
                         .addComponent(noLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(spendLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE)
-                    .addComponent(timeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE)
+                    .addComponent(spendLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
                     .addGroup(leftPanelLayout.createSequentialGroup()
                         .addComponent(shortNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(shortNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(searchBtn))
-                    .addComponent(jScrollPane1, 0, 0, Short.MAX_VALUE))
+                    .addComponent(timeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE))
                 .addContainerGap())
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
         );
         leftPanelLayout.setVerticalGroup(
             leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,92 +202,216 @@ public class ClientOrderPanel extends javax.swing.JPanel implements Runnable{
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        add(leftPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 0, 310, 562));
+
+        menuPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         menuPanel.setName("menuPanel"); // NOI18N
 
-        jPanel1.setName("jPanel1"); // NOI18N
-        jPanel1.setLayout(new java.awt.GridLayout(2, 3, 20, 5));
+        catalogPanel.setName("catalogPanel"); // NOI18N
+        catalogPanel.setLayout(new java.awt.GridLayout(2, 3, 20, 5));
 
-        jButton1.setFont(new java.awt.Font("新宋体", 0, 12)); // NOI18N
+        jButton1.setFont(new java.awt.Font("新宋体", 0, 12));
         jButton1.setText("软饮");
         jButton1.setName("jButton1"); // NOI18N
-        jPanel1.add(jButton1);
+        catalogPanel.add(jButton1);
 
-        jButton2.setFont(new java.awt.Font("新宋体", 0, 12)); // NOI18N
+        jButton2.setFont(new java.awt.Font("新宋体", 0, 12));
         jButton2.setText("烧烤");
         jButton2.setName("jButton2"); // NOI18N
-        jPanel1.add(jButton2);
+        catalogPanel.add(jButton2);
 
-        jButton3.setFont(new java.awt.Font("新宋体", 0, 12)); // NOI18N
+        jButton3.setFont(new java.awt.Font("新宋体", 0, 12));
         jButton3.setText("啤酒");
         jButton3.setName("jButton3"); // NOI18N
-        jPanel1.add(jButton3);
+        catalogPanel.add(jButton3);
 
-        jButton4.setFont(new java.awt.Font("新宋体", 0, 12)); // NOI18N
+        jButton4.setFont(new java.awt.Font("新宋体", 0, 12));
         jButton4.setText("威士忌");
         jButton4.setName("jButton4"); // NOI18N
-        jPanel1.add(jButton4);
+        catalogPanel.add(jButton4);
 
-        jButton5.setFont(new java.awt.Font("新宋体", 0, 12)); // NOI18N
+        jButton5.setFont(new java.awt.Font("新宋体", 0, 12));
         jButton5.setText("小吃");
         jButton5.setName("jButton5"); // NOI18N
-        jPanel1.add(jButton5);
+        catalogPanel.add(jButton5);
 
-        jButton6.setFont(new java.awt.Font("新宋体", 0, 12)); // NOI18N
+        jButton6.setFont(new java.awt.Font("新宋体", 0, 12));
         jButton6.setText("主食");
         jButton6.setName("jButton6"); // NOI18N
-        jPanel1.add(jButton6);
+        catalogPanel.add(jButton6);
 
-        jPanel2.setName("jPanel2"); // NOI18N
+        dishDetailsPanel.setBackground(new java.awt.Color(255, 255, 255));
+        dishDetailsPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "菜品详情", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("新宋体", 0, 12))); // NOI18N
+        dishDetailsPanel.setName("dishDetailsPanel"); // NOI18N
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 665, Short.MAX_VALUE)
+        javax.swing.GroupLayout dishDetailsPanelLayout = new javax.swing.GroupLayout(dishDetailsPanel);
+        dishDetailsPanel.setLayout(dishDetailsPanelLayout);
+        dishDetailsPanelLayout.setHorizontalGroup(
+            dishDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 674, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 468, Short.MAX_VALUE)
+        dishDetailsPanelLayout.setVerticalGroup(
+            dishDetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 439, Short.MAX_VALUE)
+        );
+
+        jPanel1.setName("jPanel1"); // NOI18N
+
+        noLabel1.setBackground(new java.awt.Color(102, 153, 255));
+        noLabel1.setFont(new java.awt.Font("新宋体", 0, 12)); // NOI18N
+        noLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        noLabel1.setText("菜品要求");
+        noLabel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 102), 1, true));
+        noLabel1.setName("noLabel1"); // NOI18N
+        noLabel1.setOpaque(true);
+
+        commentTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        commentTextField.setName("commentTextField"); // NOI18N
+        commentTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                commentTextFieldActionPerformed(evt);
+            }
+        });
+
+        noLabel2.setBackground(new java.awt.Color(255, 204, 102));
+        noLabel2.setFont(new java.awt.Font("新宋体", 0, 12)); // NOI18N
+        noLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        noLabel2.setText("数量");
+        noLabel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 204), 1, true));
+        noLabel2.setName("noLabel2"); // NOI18N
+        noLabel2.setOpaque(true);
+
+        amoutTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        amoutTextField.setText("1");
+        amoutTextField.setName("amoutTextField"); // NOI18N
+        amoutTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                amoutTextFieldActionPerformed(evt);
+            }
+        });
+
+        noLabel3.setBackground(new java.awt.Color(102, 255, 102));
+        noLabel3.setFont(new java.awt.Font("新宋体", 0, 12)); // NOI18N
+        noLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        noLabel3.setText("赠(退)菜原因");
+        noLabel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 102), 1, true));
+        noLabel3.setName("noLabel3"); // NOI18N
+        noLabel3.setOpaque(true);
+
+        reasonTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        reasonTextField.setName("reasonTextField"); // NOI18N
+        reasonTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reasonTextFieldActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(noLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(commentTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(noLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(amoutTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(noLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(reasonTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(75, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(commentTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(noLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(amoutTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(noLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(noLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(reasonTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
         menuPanel.setLayout(menuPanelLayout);
         menuPanelLayout.setHorizontalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 665, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(catalogPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 686, Short.MAX_VALUE)
+            .addComponent(dishDetailsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         menuPanelLayout.setVerticalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanelLayout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(catalogPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(195, Short.MAX_VALUE))
+                .addComponent(dishDetailsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(38, 38, 38))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(leftPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 0, 690, 660));
+
+        rightPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        rightPanel.setAlignmentX(0.0F);
+        rightPanel.setAlignmentY(0.0F);
+        rightPanel.setName("rightPanel"); // NOI18N
+
+        javax.swing.GroupLayout rightPanelLayout = new javax.swing.GroupLayout(rightPanel);
+        rightPanel.setLayout(rightPanelLayout);
+        rightPanelLayout.setHorizontalGroup(
+            rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 126, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(leftPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(572, 572, 572))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+        rightPanelLayout.setVerticalGroup(
+            rightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 656, Short.MAX_VALUE)
         );
+
+        add(rightPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1014, 0, 130, 660));
+
+        jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jPanel2.setName("jPanel2"); // NOI18N
+        jPanel2.setLayout(new java.awt.GridLayout(2, 0));
+
+        jButton7.setFont(new java.awt.Font("新宋体", 0, 12)); // NOI18N
+        jButton7.setText("+1");
+        jButton7.setName("jButton7"); // NOI18N
+        jPanel2.add(jButton7);
+
+        jButton8.setFont(new java.awt.Font("新宋体", 0, 12)); // NOI18N
+        jButton8.setText("-1");
+        jButton8.setName("jButton8"); // NOI18N
+        jPanel2.add(jButton8);
+
+        jButton10.setFont(new java.awt.Font("新宋体", 0, 12)); // NOI18N
+        jButton10.setText("修改备注");
+        jButton10.setName("jButton10"); // NOI18N
+        jPanel2.add(jButton10);
+
+        jButton9.setFont(new java.awt.Font("新宋体", 0, 12)); // NOI18N
+        jButton9.setText("退菜");
+        jButton9.setName("jButton9"); // NOI18N
+        jPanel2.add(jButton9);
+
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 560, 310, 100));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -280,14 +422,33 @@ public class ClientOrderPanel extends javax.swing.JPanel implements Runnable{
         // TODO add your handling code here:
     }//GEN-LAST:event_shortNameTextFieldActionPerformed
 
+    private void commentTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_commentTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_commentTextFieldActionPerformed
+
+    private void amoutTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_amoutTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_amoutTextFieldActionPerformed
+
+    private void reasonTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reasonTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_reasonTextFieldActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField amoutTextField;
+    private javax.swing.JPanel catalogPanel;
+    private javax.swing.JTextField commentTextField;
+    private javax.swing.JPanel dishDetailsPanel;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -296,7 +457,12 @@ public class ClientOrderPanel extends javax.swing.JPanel implements Runnable{
     private javax.swing.JPanel leftPanel;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JLabel noLabel;
+    private javax.swing.JLabel noLabel1;
+    private javax.swing.JLabel noLabel2;
+    private javax.swing.JLabel noLabel3;
     private javax.swing.JTable orderedTabel;
+    private javax.swing.JTextField reasonTextField;
+    private javax.swing.JPanel rightPanel;
     private javax.swing.JButton searchBtn;
     private javax.swing.JLabel shortNameLabel;
     private javax.swing.JTextField shortNameTextField;
@@ -306,7 +472,6 @@ public class ClientOrderPanel extends javax.swing.JPanel implements Runnable{
 
     public void run() {
         while (true) {
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
             timeLabel.setText(sdf.format(new Date()));
             try {
                 Thread.sleep(1000);
@@ -315,5 +480,4 @@ public class ClientOrderPanel extends javax.swing.JPanel implements Runnable{
             }
         }
     }
-
 }

@@ -20,7 +20,9 @@ public class Test {
         thread1.start();
         frame.add(panel);
 
-        frame.setSize(1000, 800);
+        frame.setSize(1144, 700);
+        frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
 
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
