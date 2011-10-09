@@ -6,6 +6,8 @@ package ordersystemclient.model;
 
 import java.io.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -47,6 +49,49 @@ public class HostInputThread extends Thread {
                 } else if (command.getAttributeValue("type").equals("NewClientHasLogin")) {
                     String clientId = command.getChildText("clientId");
                     hostModel.openTable(clientId);
+                }else if (command.getAttributeValue("type").equals("getBrandListS")) {
+                    System.out.println("ssss");
+                    List<Element> brandElementList = doc.getRootElement().getChild("command").getChildren();
+                    //use to set the arraylist
+                    List<Brand> brandListInter = new ArrayList<Brand>();
+                    if (brandElementList != null) {
+                        for (int i = 0; i < brandElementList.size(); i++) {
+                            Element element = brandElementList.get(i);
+                            int brandId = Integer.valueOf(element.getChildText("brandId"));
+                            String brandEName = element.getChildText("brandEName");
+                            String brandCName = element.getChildText("brandCName");
+                            System.out.println(brandId + " : " + brandEName + brandCName);
+                            Brand brand = new Brand();
+                            brand.setBrandId(brandId);
+                            brand.setBrandEName(brandEName);
+                            brand.setBrandCName(brandCName);
+                            brandListInter.add(brand);
+                        }
+                        hostModel.setBrandCEList(brandListInter);
+                    }
+
+                }
+                else if (command.getAttributeValue("type").equals("getCateListS")) {
+                    System.out.println("ssss");
+                    List<Element> brandElementList = doc.getRootElement().getChild("command").getChildren();
+                    //use to set the arraylist
+                    List<Category> cateListInter = new ArrayList<Category>();
+                    if (brandElementList != null) {
+                        for (int i = 0; i < brandElementList.size(); i++) {
+                            Element element = brandElementList.get(i);
+                            int cateId = Integer.valueOf(element.getChildText("cateId"));
+                            String cateEName = element.getChildText("cateEName");
+                            String cateCName = element.getChildText("cateCName");
+                           // System.out.println(brandId + " : " + brandEName + brandCName);
+                            Category category = new Category();
+                            category.setCateId(cateId);
+                            category.setCateEName(cateEName);
+                            category.setCateCName(cateCName);
+                            cateListInter.add(category);
+                        }
+                        hostModel.setCategCEList(cateListInter);
+                    }
+
                 }
             }
             System.out.println("HostInputThread break");

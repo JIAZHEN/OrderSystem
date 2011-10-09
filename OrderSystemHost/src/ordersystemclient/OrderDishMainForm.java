@@ -13,6 +13,7 @@ package ordersystemclient;
 import java.awt.*;
 import java.util.*;
 import javax.swing.*;
+import ordersystemclient.model.ClientStatus;
 import ordersystemclient.model.HostModel;
 
 /**
@@ -30,11 +31,8 @@ public class OrderDishMainForm extends javax.swing.JFrame implements Observer {
         this.clientBtn = new ArrayList<JButton>();
         initComponents();
         generateTablePanel();
-        // to create a scroll for the tablePanel
-//        JScrollPane scroll = new JScrollPane(tablePanel);
-//        scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-//        scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-//        scroll.getViewport().add(tablePanel);
+        hostModel.getBrandList();
+        hostModel.getCategoryList();
     }
 
     private JPanel generateTablePanel() {
@@ -69,7 +67,6 @@ public class OrderDishMainForm extends javax.swing.JFrame implements Observer {
         jButton1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         addMenuBtn = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
         tablePanel = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -124,6 +121,11 @@ public class OrderDishMainForm extends javax.swing.JFrame implements Observer {
         );
 
         addMenuBtn.setText("添加菜品");
+        addMenuBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addMenuBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -139,11 +141,19 @@ public class OrderDishMainForm extends javax.swing.JFrame implements Observer {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addComponent(addMenuBtn)
-                .addContainerGap(445, Short.MAX_VALUE))
+                .addContainerGap(441, Short.MAX_VALUE))
         );
 
-        tablePanel.setLayout(new java.awt.GridLayout());
-        jScrollPane1.setViewportView(tablePanel);
+        javax.swing.GroupLayout tablePanelLayout = new javax.swing.GroupLayout(tablePanel);
+        tablePanel.setLayout(tablePanelLayout);
+        tablePanelLayout.setHorizontalGroup(
+            tablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 635, Short.MAX_VALUE)
+        );
+        tablePanelLayout.setVerticalGroup(
+            tablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 463, Short.MAX_VALUE)
+        );
 
         jMenu1.setText("System");
         jMenuBar1.add(jMenu1);
@@ -162,9 +172,8 @@ public class OrderDishMainForm extends javax.swing.JFrame implements Observer {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 667, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addComponent(tablePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
@@ -172,10 +181,13 @@ public class OrderDishMainForm extends javax.swing.JFrame implements Observer {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 505, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(tablePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(49, 49, 49))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
 
         pack();
@@ -184,6 +196,18 @@ public class OrderDishMainForm extends javax.swing.JFrame implements Observer {
 private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 // TODO add your handling code here:
 }//GEN-LAST:event_jButton1ActionPerformed
+
+private void addMenuBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMenuBtnActionPerformed
+
+                DishesView dishesView=new DishesView(hostModel);
+               // hostModel.setBrandCEList(hostModel.getBrandCEList());
+                JFrame addDishFrame=new JFrame();
+                addDishFrame.add(dishesView);
+                addDishFrame.setSize(888, 700);
+                addDishFrame.setLocationRelativeTo(null);
+                addDishFrame.setVisible(true);
+}//GEN-LAST:event_addMenuBtnActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addMenuBtn;
     private javax.swing.JButton jButton1;
@@ -196,7 +220,6 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel tablePanel;
     // End of variables declaration//GEN-END:variables
 
