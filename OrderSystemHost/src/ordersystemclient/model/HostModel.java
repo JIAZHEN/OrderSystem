@@ -32,6 +32,9 @@ public class HostModel extends Observable {
     private ObjectOutputStream objectToServer;
     // to indicate the clients
     private ArrayList<ClientStatus> clientList;
+    
+     private List<Brand> brandCEList;
+     private List<Category> categCEList;
 
     public HostModel() {
         // initialize the number of online clients
@@ -96,7 +99,47 @@ public class HostModel extends Observable {
         }
         return result;
     }
+ //send request to get the brandlist
+    public boolean getBrandList() {
 
+        Brand brand;
+        Element root = new Element("message");
+        // level one content
+        Element command = new Element("command");
+        //send the getBrandList
+        command.setAttribute("type", "getBrandList"); // define the commend type
+        // level two contents
+        root.addContent(command);
+        // this field will store the whole message in XML format
+        Document doc = new Document(root);
+        try {
+            objectToServer.writeObject(doc);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } 
+        return true;
+    }
+    
+    //send request to server to get the categoryList;
+    public boolean getCategoryList() {
+
+        Brand brand;
+        Element root = new Element("message");
+        // level one content
+        Element command = new Element("command");
+        //send the  CategoryList
+        command.setAttribute("type", "getCategoryList"); // define the commend type
+        // level two contents
+        root.addContent(command);
+        // this field will store the whole message in XML format
+        Document doc = new Document(root);
+        try {
+            objectToServer.writeObject(doc);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } 
+        return true;
+    }
     public void openTable(String clientId) {
         for(ClientStatus e : clientList) {
             if(e.getClientId().equals(clientId)) {
@@ -107,32 +150,37 @@ public class HostModel extends Observable {
         }
     }
 
-    /**open table command
-     * 
-     * @param tableId
-     * @return 
-     */
-//    public boolean openTable(String tableId) {
-//
-//        Element root = new Element("message");
-//        // level one content
-//        Element command = new Element("command");
-//        command.setAttribute("type", "openTable"); // define the commend type
-//        // level two contents
-//        command.addContent(new Element("tableId").setText(tableId));
-//        root.addContent(command);
-//        // this field will store the whole message in XML format
-//        Document doc = new Document(root);
-//        boolean result = false;
-//        try {
-//            objectToServer.writeObject(doc);
-//            result = fromServer.readBoolean();
-//        } catch (IOException e) {
-//
-//            e.printStackTrace();
-//        }
-//        return result;
-//    }
+     public boolean addNewDish(String dishName, String dishCategory, String dishPrice,String dishPicPath,String dishIntroduction) {
+
+        Element root = new Element("message");
+        // level one content
+        Element command = new Element("command");
+        command.setAttribute("type", "addDish"); // define the commend type
+        // level two contents
+        command.addContent(new Element("dishName").setText(dishName));
+        command.addContent(new Element("dishCategory").setText(dishCategory));
+        command.addContent(new Element("dishPrice").setText(dishPrice));
+        command.addContent(new Element("dishPicPath").setText(dishPicPath));
+        command.addContent(new Element("dishIntroduction").setText(dishIntroduction));
+        
+        root.addContent(command);
+        // this field will store the whole message in XML format
+        Document doc = new Document(root);
+        boolean result = false;
+        try {
+            objectToServer.writeObject(doc);
+            result = fromServer.readBoolean();
+            if (result) {
+                Document clientStatusdoc = (Document) objectFromServer.readObject();
+                
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException ex) {
+
+        }
+        return result;
+    }
 
     public void stop() {
         Element root = new Element("message");
@@ -159,5 +207,37 @@ public class HostModel extends Observable {
 
     public ArrayList<ClientStatus> getClientList() {
         return clientList;
+    }
+    
+     /**
+     * @return the brandCEList
+     */
+    public List<Brand> getBrandCEList() {
+        return brandCEList;
+    }
+
+    /**
+     * @param brandCEList the brandCEList to set
+     */
+
+    /**
+     * @param brandCEList the brandCEList to set
+     */
+    public void setBrandCEList(List<Brand> brandCEList) {
+        this.brandCEList = brandCEList;
+    }
+
+    /**
+     * @return the categCEList
+     */
+    public List<Category> getCategCEList() {
+        return categCEList;
+    }
+
+    /**
+     * @param categCEList the categCEList to set
+     */
+    public void setCategCEList(List<Category> categCEList) {
+        this.categCEList = categCEList;
     }
 }

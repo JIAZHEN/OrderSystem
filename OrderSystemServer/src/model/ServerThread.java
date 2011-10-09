@@ -9,7 +9,6 @@ import java.sql.*;
 import java.util.*;
 
 import javax.net.ssl.SSLSocket;
-import org.jasypt.exceptions.EncryptionOperationNotPossibleException;
 import org.jdom.*;
 
 /**
@@ -139,6 +138,44 @@ public class ServerThread extends Thread {
                         toClient.writeBoolean(false);
                     }
                 }
+                else if (command.getAttributeValue("type").equals("getBrandList")) {
+                        ArrayList<Brand> brandList=new ArrayList();
+                        brandList=getBrandList();
+                        Element brandRoot = new Element("message");
+                        Element brandRootCommand = new Element("command");
+                        brandRootCommand.setAttribute("type", "getBrandListS");
+                       brandRoot.addContent(brandRootCommand);
+                        // brandListRoot.addContent(loginRootCommand);
+                        for(Brand e : brandList) {
+                            Element elementBrand = new Element("Brand");
+                            elementBrand.addContent((new Element("brandId").setText(String.valueOf(e.getBrandId()))));
+                            elementBrand.addContent((new Element("brandEName").setText("" + e.getBrandEName())));
+                             elementBrand.addContent((new Element("brandCName").setText("" + e.getBrandCName())));
+                            brandRootCommand.addContent(elementBrand);
+                        }
+                        Document brandListDoc = new Document(brandRoot);
+                       // toClient.writeBoolean(true);
+                        objectToClient.writeObject(brandListDoc);
+                }
+                else if (command.getAttributeValue("type").equals("getCategoryList")) {
+                        ArrayList<Category> cateList=new ArrayList();
+                        cateList=getCategoryList();
+                        Element brandRoot = new Element("message");
+                        Element brandRootCommand = new Element("command");
+                        brandRootCommand.setAttribute("type", "getCateListS");
+                       brandRoot.addContent(brandRootCommand);
+                        // brandListRoot.addContent(loginRootCommand);
+                        for(Category e : cateList) {
+                            Element elementBrand = new Element("Category");
+                            elementBrand.addContent((new Element("cateId").setText(String.valueOf(e.getCateId()))));
+                            elementBrand.addContent((new Element("cateEName").setText("" + e.getCateEName())));
+                             elementBrand.addContent((new Element("cateCName").setText("" + e.getCateCName())));
+                            brandRootCommand.addContent(elementBrand);
+                        }
+                        Document brandListDoc = new Document(brandRoot);
+                       // toClient.writeBoolean(true);
+                        objectToClient.writeObject(brandListDoc);
+                }
             } catch (IOException e1) {
             } catch (ClassNotFoundException e1) {
             }
@@ -206,7 +243,8 @@ public class ServerThread extends Thread {
                         result = true;
                     }
                     pStmt.close();
-                } catch (EncryptionOperationNotPossibleException eone) {
+                } catch (Exception e) {
+                    System.out.println("in password equal block, close exception :"+e.getMessage());
                 }
             } catch (SQLException e) {
             }
@@ -264,6 +302,53 @@ public class ServerThread extends Thread {
         }
         System.out.println("Someone left. Currently there are "
                 + clientList.size() + " clients");
-        System.out.println();
+        System.out.println("english version");
+	
+    }
+    
+     private ArrayList<Brand> getBrandList() {
+            PreparedStatement pStmt;
+            Brand brandObj;
+            ArrayList<Brand> brandList=new ArrayList();
+            try {
+                String sql = "SELECT * FROM brands order by brand_id";
+                pStmt = conn.prepareStatement(sql);
+                ResultSet rs = pStmt.executeQuery();
+                while(rs.next()) {
+                   brandObj=new Brand();
+                   brandObj.setBrandId(rs.getInt("brand_id"));
+                   brandObj.setBrandEName(rs.getString("b_eng_name"));
+                   brandObj.setBrandCName(rs.getString("b_cn_name"));
+                   brandList.add(brandObj);
+                }
+            } catch (SQLException e) {
+            }
+        return brandList;
+    }
+    
+    //get the categoryList
+    private ArrayList<Category> getCategoryList() {
+            PreparedStatement pStmt;
+            Category cateObj;
+            ArrayList<Category> cateList=new ArrayList();
+//            ArrayList<String> eBrandList=new ArrayList<String>();
+//            ArrayList<String> cBandList=new ArrayList<String>();
+            try {
+//                StandardStringDigester digester = new StandardStringDigester();
+//                digester.setAlgorithm("SHA-1"); // SHA-1 Algorithm
+//                digester.setIterations(50000);
+                String sql = "SELECT * FROM catalog order by c_id";
+                pStmt = conn.prepareStatement(sql);
+                ResultSet rs = pStmt.executeQuery();
+                while(rs.next()) {
+                   cateObj=new Category();
+                   cateObj.setCateId(rs.getInt("c_id"));
+                   cateObj.setCateEName(rs.getString("c_eng_name"));
+                   cateObj.setCateCName(rs.getString("c_cn_name"));
+                   cateList.add(cateObj);
+                }
+            } catch (SQLException e) {
+            }
+        return cateList;
     }
 }
