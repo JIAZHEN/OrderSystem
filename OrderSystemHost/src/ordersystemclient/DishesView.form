@@ -30,17 +30,20 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="1" groupAlignment="1" attributes="0">
+                      <Component id="banner" alignment="0" pref="913" max="32767" attributes="1"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="chinesePanel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+                          <Component id="englishPanel" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="btnPanel" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="chinesePanel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="englishPanel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
-          </Group>
-          <Component id="banner" alignment="0" pref="1064" max="32767" attributes="0"/>
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="btnPanel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="151" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -50,12 +53,11 @@
               <Component id="banner" min="-2" pref="47" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="englishPanel" linkSize="2" max="32767" attributes="1"/>
-                  <Component id="chinesePanel" linkSize="2" alignment="0" min="-2" pref="534" max="-2" attributes="1"/>
+                  <Component id="chinesePanel" min="-2" max="-2" attributes="1"/>
+                  <Component id="englishPanel" min="-2" max="-2" attributes="1"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnPanel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -89,50 +91,31 @@
                   <Component id="lblBrand" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="cPriceLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="cCatalogLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="lblBrandName" alignment="0" min="-2" pref="39" max="-2" attributes="0"/>
                       <Component id="cDishNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="398" pref="398" max="398" attributes="0"/>
-              </Group>
-              <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="cCatalogLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="cPriceLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="cPicLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="cIntrodLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="cDishNameText" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="cbbCBrand" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="244" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="cPriceText" alignment="0" max="32767" attributes="1"/>
-                              <Component id="cbbCCategory" alignment="0" pref="130" max="32767" attributes="1"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="txtPrice" min="-2" pref="117" max="-2" attributes="1"/>
+                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           <Component id="lblPriceUnit" min="-2" pref="39" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="cScrollPane1" pref="275" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Component id="cPicText" min="-2" pref="168" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="cFileSelection" min="-2" pref="38" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
+                          <Component id="txtPicture" min="-2" pref="168" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="cFileSelection" min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="txtDishCName" alignment="0" pref="142" max="32767" attributes="1"/>
+                      <Component id="cScrollPane1" alignment="0" max="32767" attributes="1"/>
+                      <Component id="cbbCCategory" alignment="0" min="-2" pref="141" max="-2" attributes="1"/>
                   </Group>
+                  <EmptySpace pref="30" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -142,7 +125,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="cDishNameLabel" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="cDishNameText" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtDishCName" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -158,17 +141,17 @@
                   <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="cPriceLabel" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="cPriceText" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtPrice" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblPriceUnit" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="cPicLabel" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="cPicText" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtPicture" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cFileSelection" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="cIntrodLabel" min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
@@ -177,7 +160,7 @@
                           <Component id="cScrollPane1" min="-2" pref="277" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -189,13 +172,13 @@
             <Property name="name" type="java.lang.String" value="cDishNameLabel" noResource="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="cDishNameText">
+        <Component class="javax.swing.JTextField" name="txtDishCName">
           <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="cDishNameText.text"/>
-            <Property name="name" type="java.lang.String" value="cDishNameText" noResource="true"/>
+            <Property name="text" type="java.lang.String" resourceKey="txtDishCName.text"/>
+            <Property name="name" type="java.lang.String" value="txtDishCName" noResource="true"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cDishNameTextActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDishCNameActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="cCatalogLabel">
@@ -221,12 +204,12 @@
             <Property name="name" type="java.lang.String" value="cPriceLabel" noResource="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="cPriceText">
+        <Component class="javax.swing.JTextField" name="txtPrice">
           <Properties>
-            <Property name="name" type="java.lang.String" value="cPriceText" noResource="true"/>
+            <Property name="name" type="java.lang.String" value="txtPrice" noResource="true"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cPriceTextActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPriceActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="cPicLabel">
@@ -235,12 +218,12 @@
             <Property name="name" type="java.lang.String" value="cPicLabel" noResource="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="cPicText">
+        <Component class="javax.swing.JTextField" name="txtPicture">
           <Properties>
-            <Property name="name" type="java.lang.String" value="cPicText" noResource="true"/>
+            <Property name="name" type="java.lang.String" value="txtPicture" noResource="true"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cPicTextActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPictureActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="cFileSelection">
@@ -268,11 +251,11 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="cIntrodTextArea">
+            <Component class="javax.swing.JTextArea" name="txtChineseIntroduction">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="name" type="java.lang.String" value="cIntrodTextArea" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="txtChineseIntroduction" noResource="true"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -328,77 +311,63 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="eIntrodLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="ePicLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="ePriceLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="eCatalogLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="eDishNameLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="eDishNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="cbbECategory" alignment="0" min="-2" pref="135" max="-2" attributes="1"/>
-                              <Component id="eDishNameText" alignment="0" min="-2" pref="146" max="-2" attributes="1"/>
-                              <Component id="cbbEBrand" alignment="0" min="-2" pref="118" max="-2" attributes="1"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="ePriceText" min="-2" pref="97" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jLabel2" min="-2" pref="45" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="ePicText" min="-2" pref="178" max="-2" attributes="1"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="eFileSelection" min="-2" pref="38" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="eScrollPane1" alignment="0" min="-2" pref="201" max="-2" attributes="0"/>
+                              <Component id="eDishNameLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="eCatalogLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="10" pref="10" max="10" attributes="0"/>
                           <Component id="lblEBrand" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="eIntrodLabel" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="74" max="32767" attributes="0"/>
+                  <EmptySpace pref="44" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="cbbECategory" min="-2" pref="135" max="-2" attributes="1"/>
+                      <Component id="cbbEBrand" min="-2" pref="118" max="-2" attributes="1"/>
+                      <Component id="eScrollPane1" alignment="0" pref="211" max="32767" attributes="1"/>
+                      <Component id="eDishNameText" alignment="0" max="32767" attributes="1"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="eDishNameLabel" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="eDishNameText" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblEBrand" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="eDishNameLabel1" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="cbbEBrand" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="eCatalogLabel" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="cbbECategory" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="ePriceLabel" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="ePriceText" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel2" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="ePicLabel" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="ePicText" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="eFileSelection" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="eIntrodLabel" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="eScrollPane1" min="-2" pref="264" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="eDishNameText" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="eDishNameLabel" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="cbbEBrand" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="eDishNameLabel1" alignment="1" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="cbbECategory" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="eCatalogLabel" alignment="1" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="eIntrodLabel" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="eScrollPane1" alignment="0" min="-2" pref="264" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="55" pref="55" max="55" attributes="0"/>
+                          <Component id="lblEBrand" min="-2" pref="26" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="38" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -434,49 +403,6 @@
             <Property name="text" type="java.lang.String" resourceKey="eCatalogLabel.text"/>
             <Property name="name" type="java.lang.String" value="eCatalogLabel" noResource="true"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="ePriceLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="ePriceLabel.text"/>
-            <Property name="name" type="java.lang.String" value="ePriceLabel" noResource="true"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="ePriceText">
-          <Properties>
-            <Property name="name" type="java.lang.String" value="ePriceText" noResource="true"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ePriceTextActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
-          <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="jLabel2.text"/>
-            <Property name="name" type="java.lang.String" value="jLabel2" noResource="true"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="ePicLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="ePicLabel.text"/>
-            <Property name="name" type="java.lang.String" value="ePicLabel" noResource="true"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="ePicText">
-          <Properties>
-            <Property name="name" type="java.lang.String" value="ePicText" noResource="true"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ePicTextActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="eFileSelection">
-          <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="eFileSelection.text"/>
-            <Property name="name" type="java.lang.String" value="eFileSelection" noResource="true"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eFileSelectionActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="eIntrodLabel">
           <Properties>
@@ -556,7 +482,7 @@
                       <Component id="submitBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="exit" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="37" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

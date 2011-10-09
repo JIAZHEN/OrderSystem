@@ -65,17 +65,17 @@ public class DishesView extends javax.swing.JPanel {
         banner = new javax.swing.JLabel();
         chinesePanel = new javax.swing.JPanel();
         cDishNameLabel = new javax.swing.JLabel();
-        cDishNameText = new javax.swing.JTextField();
+        txtDishCName = new javax.swing.JTextField();
         cCatalogLabel = new javax.swing.JLabel();
         cbbCCategory = new javax.swing.JComboBox();
         cPriceLabel = new javax.swing.JLabel();
-        cPriceText = new javax.swing.JTextField();
+        txtPrice = new javax.swing.JTextField();
         cPicLabel = new javax.swing.JLabel();
-        cPicText = new javax.swing.JTextField();
+        txtPicture = new javax.swing.JTextField();
         cFileSelection = new javax.swing.JButton();
         cIntrodLabel = new javax.swing.JLabel();
         cScrollPane1 = new javax.swing.JScrollPane();
-        cIntrodTextArea = new javax.swing.JTextArea();
+        txtChineseIntroduction = new javax.swing.JTextArea();
         lblBrand = new javax.swing.JLabel();
         cbbCBrand = new javax.swing.JComboBox();
         lblBrandName = new javax.swing.JLabel();
@@ -85,12 +85,6 @@ public class DishesView extends javax.swing.JPanel {
         eDishNameText = new javax.swing.JTextField();
         cbbECategory = new javax.swing.JComboBox();
         eCatalogLabel = new javax.swing.JLabel();
-        ePriceLabel = new javax.swing.JLabel();
-        ePriceText = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        ePicLabel = new javax.swing.JLabel();
-        ePicText = new javax.swing.JTextField();
-        eFileSelection = new javax.swing.JButton();
         eIntrodLabel = new javax.swing.JLabel();
         eScrollPane1 = new javax.swing.JScrollPane();
         eIntrodTextArea = new javax.swing.JTextArea();
@@ -121,11 +115,11 @@ public class DishesView extends javax.swing.JPanel {
         cDishNameLabel.setText(resourceMap.getString("cDishNameLabel.text")); // NOI18N
         cDishNameLabel.setName("cDishNameLabel"); // NOI18N
 
-        cDishNameText.setText(resourceMap.getString("cDishNameText.text")); // NOI18N
-        cDishNameText.setName("cDishNameText"); // NOI18N
-        cDishNameText.addActionListener(new java.awt.event.ActionListener() {
+        txtDishCName.setText(resourceMap.getString("txtDishCName.text")); // NOI18N
+        txtDishCName.setName("txtDishCName"); // NOI18N
+        txtDishCName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cDishNameTextActionPerformed(evt);
+                txtDishCNameActionPerformed(evt);
             }
         });
 
@@ -142,20 +136,20 @@ public class DishesView extends javax.swing.JPanel {
         cPriceLabel.setText(resourceMap.getString("cPriceLabel.text")); // NOI18N
         cPriceLabel.setName("cPriceLabel"); // NOI18N
 
-        cPriceText.setName("cPriceText"); // NOI18N
-        cPriceText.addActionListener(new java.awt.event.ActionListener() {
+        txtPrice.setName("txtPrice"); // NOI18N
+        txtPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cPriceTextActionPerformed(evt);
+                txtPriceActionPerformed(evt);
             }
         });
 
         cPicLabel.setText(resourceMap.getString("cPicLabel.text")); // NOI18N
         cPicLabel.setName("cPicLabel"); // NOI18N
 
-        cPicText.setName("cPicText"); // NOI18N
-        cPicText.addActionListener(new java.awt.event.ActionListener() {
+        txtPicture.setName("txtPicture"); // NOI18N
+        txtPicture.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cPicTextActionPerformed(evt);
+                txtPictureActionPerformed(evt);
             }
         });
 
@@ -172,10 +166,10 @@ public class DishesView extends javax.swing.JPanel {
 
         cScrollPane1.setName("cScrollPane1"); // NOI18N
 
-        cIntrodTextArea.setColumns(20);
-        cIntrodTextArea.setRows(5);
-        cIntrodTextArea.setName("cIntrodTextArea"); // NOI18N
-        cScrollPane1.setViewportView(cIntrodTextArea);
+        txtChineseIntroduction.setColumns(20);
+        txtChineseIntroduction.setRows(5);
+        txtChineseIntroduction.setName("txtChineseIntroduction"); // NOI18N
+        cScrollPane1.setViewportView(txtChineseIntroduction);
 
         lblBrand.setName("lblBrand"); // NOI18N
 
@@ -200,39 +194,27 @@ public class DishesView extends javax.swing.JPanel {
                 .addComponent(lblBrand)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(chinesePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblBrandName, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cDishNameLabel))
-                .addGap(398, 398, 398))
-            .addGroup(chinesePanelLayout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addGroup(chinesePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cCatalogLabel)
                     .addComponent(cPriceLabel)
+                    .addComponent(cCatalogLabel)
+                    .addComponent(lblBrandName, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cDishNameLabel)
                     .addComponent(cPicLabel)
                     .addComponent(cIntrodLabel))
                 .addGap(18, 18, 18)
-                .addGroup(chinesePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cDishNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbbCBrand, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(244, 244, 244))
-            .addGroup(chinesePanelLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addGroup(chinesePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(chinesePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cbbCBrand, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(chinesePanelLayout.createSequentialGroup()
-                        .addGroup(chinesePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(cPriceText, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbbCCategory, javax.swing.GroupLayout.Alignment.LEADING, 0, 130, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addComponent(lblPriceUnit, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
+                        .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(lblPriceUnit, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(chinesePanelLayout.createSequentialGroup()
-                        .addGroup(chinesePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
-                            .addGroup(chinesePanelLayout.createSequentialGroup()
-                                .addComponent(cPicText, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cFileSelection, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(111, 111, 111))))
+                        .addComponent(txtPicture, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cFileSelection, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDishCName, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                    .addComponent(cScrollPane1)
+                    .addComponent(cbbCCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         chinesePanelLayout.setVerticalGroup(
             chinesePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -240,7 +222,7 @@ public class DishesView extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(chinesePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cDishNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cDishNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDishCName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(chinesePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblBrand, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -253,12 +235,12 @@ public class DishesView extends javax.swing.JPanel {
                 .addGap(9, 9, 9)
                 .addGroup(chinesePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cPriceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cPriceText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblPriceUnit, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(chinesePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cPicLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cPicText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPicture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cFileSelection))
                 .addGroup(chinesePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(chinesePanelLayout.createSequentialGroup()
@@ -267,7 +249,7 @@ public class DishesView extends javax.swing.JPanel {
                     .addGroup(chinesePanelLayout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(cScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(26, 26, 26))
+                .addContainerGap())
         );
 
         englishPanel.setBackground(resourceMap.getColor("englishPanel.background")); // NOI18N
@@ -293,37 +275,6 @@ public class DishesView extends javax.swing.JPanel {
 
         eCatalogLabel.setText(resourceMap.getString("eCatalogLabel.text")); // NOI18N
         eCatalogLabel.setName("eCatalogLabel"); // NOI18N
-
-        ePriceLabel.setText(resourceMap.getString("ePriceLabel.text")); // NOI18N
-        ePriceLabel.setName("ePriceLabel"); // NOI18N
-
-        ePriceText.setName("ePriceText"); // NOI18N
-        ePriceText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ePriceTextActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setText(resourceMap.getString("jLabel2.text")); // NOI18N
-        jLabel2.setName("jLabel2"); // NOI18N
-
-        ePicLabel.setText(resourceMap.getString("ePicLabel.text")); // NOI18N
-        ePicLabel.setName("ePicLabel"); // NOI18N
-
-        ePicText.setName("ePicText"); // NOI18N
-        ePicText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ePicTextActionPerformed(evt);
-            }
-        });
-
-        eFileSelection.setText(resourceMap.getString("eFileSelection.text")); // NOI18N
-        eFileSelection.setName("eFileSelection"); // NOI18N
-        eFileSelection.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eFileSelectionActionPerformed(evt);
-            }
-        });
 
         eIntrodLabel.setText(resourceMap.getString("eIntrodLabel.text")); // NOI18N
         eIntrodLabel.setName("eIntrodLabel"); // NOI18N
@@ -356,62 +307,48 @@ public class DishesView extends javax.swing.JPanel {
                     .addGroup(englishPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(englishPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(eIntrodLabel)
-                            .addComponent(ePicLabel)
-                            .addComponent(ePriceLabel)
-                            .addComponent(eCatalogLabel)
+                            .addComponent(eDishNameLabel)
                             .addComponent(eDishNameLabel1)
-                            .addComponent(eDishNameLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(englishPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbbECategory, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(eDishNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbbEBrand, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(englishPanelLayout.createSequentialGroup()
-                                .addComponent(ePriceText, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(englishPanelLayout.createSequentialGroup()
-                                .addComponent(ePicText, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(eFileSelection, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(eScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(eCatalogLabel)))
                     .addGroup(englishPanelLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(lblEBrand)))
-                .addContainerGap(74, Short.MAX_VALUE))
+                        .addComponent(lblEBrand))
+                    .addGroup(englishPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(eIntrodLabel)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addGroup(englishPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cbbECategory, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbbEBrand, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
+                    .addComponent(eDishNameText))
+                .addGap(25, 25, 25))
         );
         englishPanelLayout.setVerticalGroup(
             englishPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(englishPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(englishPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(eDishNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eDishNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(englishPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEBrand, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eDishNameLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbbEBrand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(englishPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(eCatalogLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbbECategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
-                .addGroup(englishPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ePriceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ePriceText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(englishPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ePicLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ePicText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eFileSelection))
-                .addGap(18, 18, 18)
                 .addGroup(englishPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(eIntrodLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(38, Short.MAX_VALUE))
+                    .addGroup(englishPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(englishPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(eDishNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(eDishNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(englishPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbbEBrand, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(eDishNameLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(englishPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbbECategory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(eCatalogLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(78, 78, 78)
+                        .addGroup(englishPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(eIntrodLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(eScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(englishPanelLayout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(lblEBrand, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         btnPanel.setBackground(resourceMap.getColor("btnPanel.background")); // NOI18N
@@ -462,23 +399,24 @@ public class DishesView extends javax.swing.JPanel {
                     .addComponent(reset)
                     .addComponent(submitBtn)
                     .addComponent(exit))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(chinesePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(englishPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(178, 178, 178))
-            .addComponent(banner, javax.swing.GroupLayout.DEFAULT_SIZE, 1064, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(btnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(banner, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 913, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(chinesePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(117, 117, 117)
+                            .addComponent(englishPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -486,36 +424,28 @@ public class DishesView extends javax.swing.JPanel {
                 .addComponent(banner, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(englishPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(chinesePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 534, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                    .addComponent(chinesePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(englishPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {chinesePanel, englishPanel});
-
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cDishNameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cDishNameTextActionPerformed
+    private void txtDishCNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDishCNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cDishNameTextActionPerformed
+    }//GEN-LAST:event_txtDishCNameActionPerformed
 
     private void eDishNameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eDishNameTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_eDishNameTextActionPerformed
 
-    private void cPriceTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cPriceTextActionPerformed
+    private void txtPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPriceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cPriceTextActionPerformed
+    }//GEN-LAST:event_txtPriceActionPerformed
 
-    private void ePriceTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ePriceTextActionPerformed
+    private void txtPictureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPictureActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ePriceTextActionPerformed
-
-    private void cPicTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cPicTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cPicTextActionPerformed
+    }//GEN-LAST:event_txtPictureActionPerformed
 
     private void cFileSelectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cFileSelectionActionPerformed
         // TODO add your handling code here:
@@ -524,46 +454,28 @@ public class DishesView extends javax.swing.JPanel {
             File file = fileChooser.getSelectedFile();
             // What to do with the file, e.g. display it in a TextArea
             String path = file.getAbsolutePath();
-            cPicText.setText(path);
+            txtPicture.setText(path);
         } else {
             System.out.println("File access cancelled by user.");
         }
     }//GEN-LAST:event_cFileSelectionActionPerformed
 
-    private void ePicTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ePicTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ePicTextActionPerformed
-
-    private void eFileSelectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eFileSelectionActionPerformed
-        // TODO add your handling code here:
-        int returnVal = fileChooser.showOpenDialog(null);
-        if (returnVal == JFileChooser.APPROVE_OPTION) {
-            File file = fileChooser.getSelectedFile();
-            // What to do with the file, e.g. display it in a TextArea
-            String path = file.getAbsolutePath();
-            ePicText.setText(path);
-        } else {
-            System.out.println("File access cancelled by user.");
-        }
-    }//GEN-LAST:event_eFileSelectionActionPerformed
-
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
         // TODO add your handling code here:
-        cDishNameText.setText("");
+        txtDishCName.setText("");
         eDishNameText.setText("");
-        cIntrodTextArea.setText("");
+        txtChineseIntroduction.setText("");
         eIntrodTextArea.setText("");
-        cPicText.setText("");
-        ePicText.setText("");
-        cPriceText.setText("");
-        ePriceText.setText("");
+        txtPicture.setText("");
+        txtPrice.setText("");
     }//GEN-LAST:event_resetActionPerformed
 
 private void submitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitBtnActionPerformed
-    String dishName = cDishNameText.getText();
-    String dishIntroduction = cIntrodTextArea.getText();
-    String dishPrice = cPriceText.getText();
-    String picPath = cPicText.getText();
+    String dishName = txtDishCName.getText();
+    String dishIntroduction = txtChineseIntroduction.getText();
+    String dishPrice = txtPrice.getText();
+    String picPath = txtPicture.getText();
+    String brand=cbbCBrand.getSelectedItem().toString();
     String dishCategory = cbbCCategory.getSelectedItem().toString();
     if (dishName.isEmpty() || dishIntroduction.isEmpty() || dishPrice.isEmpty() || picPath.isEmpty() || cbbCCategory.getSelectedIndex() == 0) {
         JOptionPane.showMessageDialog(null, "dish name/introduction/price/picture/category should be completed");
@@ -654,14 +566,10 @@ private void cbbCCategoryItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-F
     private javax.swing.JPanel btnPanel;
     private javax.swing.JLabel cCatalogLabel;
     private javax.swing.JLabel cDishNameLabel;
-    private javax.swing.JTextField cDishNameText;
     private javax.swing.JButton cFileSelection;
     private javax.swing.JLabel cIntrodLabel;
-    private javax.swing.JTextArea cIntrodTextArea;
     private javax.swing.JLabel cPicLabel;
-    private javax.swing.JTextField cPicText;
     private javax.swing.JLabel cPriceLabel;
-    private javax.swing.JTextField cPriceText;
     private javax.swing.JScrollPane cScrollPane1;
     private javax.swing.JComboBox cbbCBrand;
     private javax.swing.JComboBox cbbCCategory;
@@ -672,24 +580,22 @@ private void cbbCCategoryItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-F
     private javax.swing.JLabel eDishNameLabel;
     private javax.swing.JLabel eDishNameLabel1;
     private javax.swing.JTextField eDishNameText;
-    private javax.swing.JButton eFileSelection;
     private javax.swing.JLabel eIntrodLabel;
     private javax.swing.JTextArea eIntrodTextArea;
-    private javax.swing.JLabel ePicLabel;
-    private javax.swing.JTextField ePicText;
-    private javax.swing.JLabel ePriceLabel;
-    private javax.swing.JTextField ePriceText;
     private javax.swing.JScrollPane eScrollPane1;
     private javax.swing.JPanel englishPanel;
     private javax.swing.JButton exit;
     private javax.swing.JFileChooser fileChooser;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblBrand;
     private javax.swing.JLabel lblBrandName;
     private javax.swing.JLabel lblEBrand;
     private javax.swing.JLabel lblPriceUnit;
     private javax.swing.JButton reset;
     private javax.swing.JButton submitBtn;
+    private javax.swing.JTextArea txtChineseIntroduction;
+    private javax.swing.JTextField txtDishCName;
+    private javax.swing.JTextField txtPicture;
+    private javax.swing.JTextField txtPrice;
     // End of variables declaration//GEN-END:variables
 
     private void fullfillBrand() {
